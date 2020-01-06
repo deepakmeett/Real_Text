@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "548936811260",
+    "firebase_url": "https://realtext-ea479.firebaseio.com",
+    "project_id": "realtext-ea479",
+    "storage_bucket": "realtext-ea479.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:548936811260:android:82f9addf6c48b1dd1b0d79",
+        "android_client_info": {
+          "package_name": "com.example.real_text"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "548936811260-4bve854v4pql5lv4p43squv17dg1eknk.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.real_text",
+            "certificate_hash": "5b4f3baf50f76cd762d6a7bbf2f05b3abbee7962"
+          }
+        },
+        {
+          "client_id": "548936811260-g43e4lufoad05pj3dmotmjd5mn672d3p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA2ajKUXbZzcUF6vvaIACcCzEQBnVmUwuY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "548936811260-g43e4lufoad05pj3dmotmjd5mn672d3p.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
