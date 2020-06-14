@@ -23,6 +23,13 @@
         android:text="upload Image"
         android:layout_height="wrap_content"/>
 
+    <Button
+        android:layout_width="match_parent"
+        android:layout_marginTop="10dp"
+        android:id="@+id/nextBtn"
+        android:text="Next"
+        android:layout_height="wrap_content"/>
+
     <ProgressBar
         android:id="@+id/progressBar"
         style="?android:attr/progressBarStyleHorizontal"

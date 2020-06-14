@@ -30,7 +30,7 @@ public class Main5Activity extends AppCompatActivity {
     DatabaseReference databaseReference;
     StorageReference storageReference;
     ProgressBar progressBar;
-    Button button;
+    Button button, buttonNext;
     Uri uri;
     private StorageTask upload_task;
 
@@ -40,6 +40,7 @@ public class Main5Activity extends AppCompatActivity {
         setContentView( R.layout.activity_main5 );
         imageView = findViewById( R.id.img_take_button );
         button = findViewById( R.id.upload_image );
+        buttonNext = findViewById( R.id.nextBtn );
         progressBar = findViewById( R.id.progressBar );
         storageReference = FirebaseStorage.getInstance().getReference( "uploads" );
         databaseReference = FirebaseDatabase.getInstance().getReference( "uploads" );
@@ -60,6 +61,14 @@ public class Main5Activity extends AppCompatActivity {
                 }else {
                     uploadfile();
                 }
+            }
+        } );
+        
+        buttonNext.setOnClickListener( new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Main5Activity.this, Main6Activity.class);
+                startActivity( intent );
             }
         } );
     }

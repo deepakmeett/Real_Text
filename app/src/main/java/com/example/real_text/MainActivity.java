@@ -81,7 +81,7 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
         button1.setOnClickListener( new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent( MainActivity.this, Main6Activity.class );
+                Intent intent = new Intent( MainActivity.this, Main2Activity.class );
                 startActivity( intent );
             }
         } );
