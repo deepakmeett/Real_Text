@@ -30,6 +30,7 @@ public class Main2Activity extends AppCompatActivity {
         button = findViewById( R.id.button_Retrieve );
         button1 = findViewById( R.id.retrieve_next );
         databaseReference = FirebaseDatabase.getInstance().getReference().child( "Data" );
+       
         button.setOnClickListener( new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -47,13 +48,6 @@ public class Main2Activity extends AppCompatActivity {
                 } );
             }
         } );
-        button1.setOnLongClickListener( new View.OnLongClickListener() {
-            @Override
-            public boolean onLongClick(View view) {
-                Toast.makeText( Main2Activity.this, "Progress should be run", Toast.LENGTH_SHORT ).show();
-                return false;
-            }
-        } );
         button1.setOnClickListener( new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -62,7 +56,4 @@ public class Main2Activity extends AppCompatActivity {
             }
         } );
     }
-
-    
-
 }

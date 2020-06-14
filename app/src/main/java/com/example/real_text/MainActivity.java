@@ -39,7 +39,6 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
     Button button, button1, button2;
     DatabaseReference databaseReference;
     HashMap<String, String> take_data = new HashMap<>();
-    
     List<Address> address = new ArrayList<>();
     ProgressBar progressBar;
     int sec = 1;
@@ -62,11 +61,13 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
                 runnable.run();
             }
         } );
-        button1.setOnClickListener( new View.OnClickListener() {
+        
+        button1.setOnLongClickListener( new View.OnLongClickListener() {
             @Override
-            public void onClick(View view) {
-                Intent intent = new Intent( MainActivity.this, Main2Activity.class );
+            public boolean onLongClick(View view) {
+                Intent intent = new Intent( getApplicationContext(), Main2Activity.class );
                 startActivity( intent );
+                return false;
             }
         } );
         button2.setOnClickListener( new View.OnClickListener() {
@@ -75,6 +76,13 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
             public void onClick(View view) {
                 handler.removeCallbacks( runnable );
 
+            }
+        } );
+        button1.setOnClickListener( new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent( MainActivity.this, Main6Activity.class );
+                startActivity( intent );
             }
         } );
     }
@@ -90,10 +98,14 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
                 take_data.put( "name", editText1.getText().toString() );
                 take_data.put( "email", "deepak@gmail.com" );
                 take_data.put( "imageUrl", "https://firebasestorage.googleapis.com/v0/b/realtext-ea479.appspot.com/o/uploads%2F1577884762876%2Cjpg?alt=media&token=26eeeeb8-d4e2-47bd-b8aa-4c67aeed1c89" );
-                add_data();
+//                try {
+                    add_data();
+//                } catch (Exception e) {
+//                    e.printStackTrace();
+//                }
                 //to this code for real time database text send on firebase
-                double  progess  = (10.0 * sec);
-                progressBar.setProgress( (int)progess );
+                double progess = (10.0 * sec);
+                progressBar.setProgress( (int) progess );
                 sec++;
                 handler.postDelayed( this, 10000 );
             } else {
@@ -104,7 +116,7 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
         }
     };
 
-    public void add_data() {
+    public void add_data()/*throws Exception*/ {
         databaseReference.setValue( take_data ).addOnCompleteListener( new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
